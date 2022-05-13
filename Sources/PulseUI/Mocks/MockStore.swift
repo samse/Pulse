@@ -39,7 +39,7 @@ private extension NSManagedObject {
     }
 }
 
-private struct Logger {
+private struct PLogger {
     let label: String
     let store: LoggerStore
 
@@ -51,8 +51,8 @@ private struct Logger {
 func populateStore(_ store: LoggerStore) {
     precondition(Thread.isMainThread)
 
-    func logger(named: String) -> Logger {
-        Logger(label: named, store: store)
+    func logger(named: String) -> PLogger {
+        PLogger(label: named, store: store)
     }
 
     logger(named: "application")
